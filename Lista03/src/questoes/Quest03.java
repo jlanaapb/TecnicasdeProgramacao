@@ -5,32 +5,28 @@ import java.util.Scanner;
 public class Quest03 {
 
 	
-	public static int weightedAverage(int[] vectorOne, int[] vectorTwo) {
-//		int sumOne=0;
-//		for(int i=0; i<vectorOne.length; i++) {
-//			sumOne+= vectorOne[i];
-//		}
-//		sumOne=sumOne/5;
-//		
-//		
-//		int sumTwo=0;
-//		for(int i=0; i<vectorTwo.length; i++) {
-//			sumTwo+= vectorTwo[i];
-//		}
-//		sumTwo=sumTwo/5;
-//		
-//		int mediaTotal;
-//		
-//		mediaTotal=(sumOne+sumTwo)/2;
-//		
-//		
-		//return mediaTotal;
+	public static void  weightedAverage(double[] grades, double[] value) {
+		double stepOne[]= new double[5];
+		
+		for(int a=0,i=0,j=0;a<stepOne.length;a++,i++,j++) {
+			stepOne[a]=grades[i]*value[j];
+			System.out.println(stepOne[a]);
+		}
+		
+		double sum=0;
+		for(int i=0; i<stepOne.length; i++) {
+			sum+= stepOne[i];
+		} 
+		sum=sum/5;
+		System.out.println("Media ponderada: "+sum);
 	}
+		
+	
 	
 	
 	public static void main(String[] args) {
-		int grades[]= new int[5];
-		int value[]= new int[5];
+		double grades[]= new double[5];
+		double value[]= new double[5];
 		
 		grades[0]= 8;
 		grades[1]= 9;
@@ -45,7 +41,7 @@ public class Quest03 {
 		value[4]= 2;
 		
 		
-		
+		weightedAverage(grades, value);
 	}
 
 }
