@@ -13,8 +13,6 @@ public class BotaoCelula extends Botao implements ActionListener{
 		
 	}
 
-
-	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
 		clicado = true;		

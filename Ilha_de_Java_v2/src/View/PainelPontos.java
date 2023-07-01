@@ -18,8 +18,9 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 public class PainelPontos extends JPanel {
-
-	private JPanel dados = new JPanel();
+	private JPanel pontosJogador = new JPanel();
+	private JPanel alunoseBugs = new JPanel();
+	private JPanel pontosrobos = new JPanel();
 	private JPanel botoesMenu= new JPanel();
 	private JPanel botoesRobo = new JPanel();
 	private JPanel organiza = new JPanel();
@@ -29,83 +30,101 @@ public class PainelPontos extends JPanel {
 	public PainelPontos(Janela janela){
 		this.setSize(300,400);
 		this.setBackground(Color.white);
+		organizaComponentes();	
+	}
+	
+	private void organizaComponentes() {
+		criaPainelDados();
+		criaBotoesRobo();
+		criaBotoesMenu();
 		
-		JLabel pontuacao= new JLabel("Pontuação:");
-		JLabel pontoJogador = new JLabel("pontos");
-		JLabel total = new JLabel("Total:");
-		JLabel totalAlu = new JLabel("totaldealunos");
-		JLabel totalBug = new JLabel("totaldebug:");
-		JLabel pontosRobo1 = new JLabel("pontorobo1");
-		JLabel pontosRobo2 = new JLabel("pontorobo2");
-		JLabel pontosRobo3 = new JLabel("pontorobo3");
-		
-		
-		
-//		brainha.addActionListener(new EventoRainha(janela));
-//		ImageIcon a = new ImageIcon("C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\xadrez-rainha-alt.png");
-//		brainha.setIcon(a);
-//		
-//		JButton  bfischer = new JButton();
-//		brainha.addActionListener(new EventoFischer(janela));
-//		ImageIcon b = new ImageIcon("C:\\\\Users\\\\Usuário\\\\eclipse-workspace\\\\Ilha_de_Java_v2\\\\src\\\\View\\\\img\\\\programador.png");
-//		bfischer.setIcon(b);
-//		
-//		JButton  peao= new JButton();
-//		brainha.addActionListener(new EventoRainha(janela));
-//		ImageIcon c = new ImageIcon("C:\\\\Users\\\\Usuário\\\\eclipse-workspace\\\\Ilha_de_Java_v2\\\\src\\\\View\\\\img\\\\peca-de-xadrez.png");
-		//peao.setIcon(c);
-		
-		Rainha botaoRainha = new Rainha(1);
-	//	botaoRainha.addActionListener(new EventoRainha(janela,botaoRainha));
-		
-		Fischer botaoFischer = new Fischer(2);
-		Peao botaoPeao = new Peao(3);
+        organiza.setLayout(new GridLayout(5, 1));
+        organiza.add(pontosJogador);
+        organiza.add(alunoseBugs);
+        organiza.add(pontosrobos);
+        organiza.add(botoesRobo);
+        organiza.add(botoesMenu);
+        this.add(organiza);
+      
+    }
+	
+	public void criaBotoesRobo() {
+        Rainha botaoRainha = new Rainha(1);
+        Fischer botaoFischer = new Fischer(2);
+        Peao botaoPeao = new Peao(3);
+        
+        botoesRobo.setLayout(new FlowLayout());
+        botoesRobo.add(botaoPeao);
+        botoesRobo.add(botaoFischer);
+        botoesRobo.add(botaoRainha);
+	}
+	public void criaPainelDados() {
+		JLabel pontuacao = new JLabel("Sua pontuação:");
+		JLabel pontoJogador = new JLabel("0");// variavel
 
-		
-		Botao botaoVerificar= new Botao("Verificar",Color.green);
+		ImageIcon imgAlu = new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\rosto-incrivel.png");
+		imgAlu.setImage(imgAlu.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		JLabel Alu = new JLabel(imgAlu);
+		JLabel totalAlu = new JLabel("0");// variavel
+
+		ImageIcon imgBug = new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\erro.png");
+		imgBug.setImage(imgBug.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		JLabel bug = new JLabel(imgBug);
+		JLabel totalBug = new JLabel("0");// variavel
+
+		ImageIcon imgR1 = new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\xadrez-rainha-alt.png");
+		imgR1.setImage(imgR1.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		JLabel roboRainha = new JLabel(imgR1);
+		JLabel pontosRobo1 = new JLabel("0");// variavel
+
+		ImageIcon imgR2 = new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\programador.png");
+		imgR2.setImage(imgR2.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		JLabel roboFischer = new JLabel(imgR2);
+		JLabel pontosRobo2 = new JLabel("0");// variavel
+
+		ImageIcon imgR3 = new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\peca-de-xadrez.png");
+		imgR3.setImage(imgR3.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		JLabel roboPeao = new JLabel(imgR3);
+		JLabel pontosRobo3 = new JLabel("0");// variavel
+
+        pontosJogador.setLayout(new GridLayout(1,2));
+        pontosJogador.add(pontuacao);
+        pontosJogador.add(pontoJogador);
+ 
+        alunoseBugs.setLayout(new GridLayout(1,4));
+        alunoseBugs.add(Alu);
+        alunoseBugs.add(totalAlu);
+        alunoseBugs.add(bug);
+        alunoseBugs.add(totalBug);
+        
+        pontosrobos.setLayout(new GridLayout(1,6));
+        pontosrobos.add(roboRainha);
+        pontosrobos.add(pontosRobo1);
+        pontosrobos.add(roboFischer);
+        pontosrobos.add(pontosRobo2);
+        pontosrobos.add(roboPeao);
+        pontosrobos.add(pontosRobo3);
+	}
+	public void criaBotoesMenu() {
+		Botao botaoVerificar = new Botao("Verificar", Color.green);
 		botaoVerificar.addActionListener(new Verificar(janela));
-		Botao botaoProximo=new Botao("Próxima Jogada",Color.green);
+		Botao botaoProximo = new Botao("Próxima Jogada", Color.green);
 		botaoProximo.addActionListener(new ProximaJogada(janela));
-		Botao botaoSair=new Botao("Sair",Color.green);
+		Botao botaoSair = new Botao("Sair", Color.green);
 		botaoSair.addActionListener(new Sair(janela));
 		
-		dados.setLayout(new GridLayout(3,5));
-		dados.add(pontoJogador);
-//		dados.add(pontos);
-		dados.add(total);
-		
-		dados.add(totalAlu);
-		dados.add(totalBug);
-		dados.add(pontosRobo1);
-		dados.add(pontosRobo2);
-		dados.add(pontosRobo3);
-	
-		botoesRobo.setLayout(new FlowLayout());
-		botoesRobo.add(botaoPeao);
-		botoesRobo.add(botaoFischer);
-		botoesRobo.add(botaoRainha);
-
-		botoesMenu.setLayout(new GridLayout(3,1));
+		botoesMenu.setLayout(new GridLayout(3, 1));
 		botoesMenu.add(botaoVerificar);
 		botoesMenu.add(botaoProximo);
 		botoesMenu.add(botaoSair);
+	}
 	
-		organiza.setLayout(new GridLayout(3,1));
-		organiza.add(dados);
-		organiza.add(botoesRobo);
-		organiza.add(botoesMenu);
-		
-		this.add(organiza);
-		
-	}
-
-	public JPanel getDados() {
-		return dados;
-	}
-
-	public void setDados(JPanel dados) {
-		this.dados = dados;
-	}
+	
 
 	public JPanel getBotoesMenu() {
 		return botoesMenu;

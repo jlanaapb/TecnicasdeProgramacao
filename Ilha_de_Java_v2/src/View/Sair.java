@@ -11,8 +11,7 @@ public class Sair implements ActionListener{
 	
 	public Sair(Janela janela) {
 		this.janela=janela;
-		
-		
+	
 	}
 	public void actionPerformed(ActionEvent e) {
 

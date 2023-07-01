@@ -27,16 +27,7 @@ public class Tabuleiro extends JPanel {
 		this.iconeAux = iconeAux;
 	}
 
-	public void verificarClique() {
-		
-		for (Celula celula : listaCelulas) 
-		{
-			if(celula.getBotaoCelula().clicado == true)
-			{
-				celula.getBotaoCelula().setIcon(iconeAux);
-			}
-		}
-	}
+	
 	public Tabuleiro(Janela janela) {
 		this.janela = janela;
 		listaCelulas = new ArrayList<>();
@@ -47,15 +38,6 @@ public class Tabuleiro extends JPanel {
 	}
 	
 	
-	public Janela getJanela() {
-		return janela;
-	}
-
-
-	public void setJanela(Janela janela) {
-		this.janela = janela;
-	}
-
 
 	public void povoarTabuleiro()
 	{
@@ -64,7 +46,6 @@ public class Tabuleiro extends JPanel {
 			for(int j = 0; j < 8; j++)
 			{
 				Celula celula = new Celula(i,j, getJanela());
-//				celula.addActionListener(new EventoSelecionaBotao());
 				this.listaCelulas.add(celula);
 				add(celula.getBotao());
 				if((i+j)%2==0)
@@ -72,16 +53,17 @@ public class Tabuleiro extends JPanel {
 			}
 		}
 	}
+public void verificarClique() {
+		
+		for (Celula celula : listaCelulas) 
+		{
+			if(celula.getBotaoCelula().clicado == true)
+			{
+				celula.getBotaoCelula().setIcon(iconeAux);
+			}
+		}
+	}
 	
-	public ArrayList<Celula> getListaCelulas() {
-		return listaCelulas;
-	}
-
-
-	public void setListaCelulas(ArrayList<Celula> listaCelulas) {
-		this.listaCelulas = listaCelulas;
-	}
-
 
 	public void addAlunosEBugs()
 	{
@@ -113,5 +95,23 @@ public class Tabuleiro extends JPanel {
 		}
 		
 	}
+	public ArrayList<Celula> getListaCelulas() {
+		return listaCelulas;
+	}
+
+
+	public void setListaCelulas(ArrayList<Celula> listaCelulas) {
+		this.listaCelulas = listaCelulas;
+	}
+
+	public Janela getJanela() {
+		return janela;
+	}
+
+
+	public void setJanela(Janela janela) {
+		this.janela = janela;
+	}
+
 
 }

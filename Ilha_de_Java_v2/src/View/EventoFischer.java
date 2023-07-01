@@ -10,12 +10,12 @@ public class EventoFischer implements ActionListener{
 	
 	public EventoFischer(Janela janela) {
 		this.janela=janela;
-		
+		this.fischer=fischer;
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		janela.setIconeAux(fischer.getIcon());	
-		
+		fischer.setClicado(true);
 	}
 	}
 

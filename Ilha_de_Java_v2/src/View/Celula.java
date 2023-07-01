@@ -59,20 +59,20 @@ public class Celula {
 
 	public void adicionarAluno() {
 		temAluno = true;
-//		setBackground(new Color(0x00ff00));
-//		setIcon(new ImageIcon(new ImageIcon(
-//				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\rosto-incrivel.png")
-//				.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
-//		setVisible(true);
+		botao.setBackground(new Color(0x00ff00));
+		botao.setIcon(new ImageIcon(new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\rosto-incrivel.png")
+				.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
+		botao.setVisible(true);
 
 	}
 
 	public void adicionarBug() {
 		temBug = true;
-//		setBackground(new Color(0xff0000));
-//		setIcon(new ImageIcon(new ImageIcon(
-//				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\erro.png")
-//				.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));setVisible(true);
+		botao.setBackground(new Color(0xff0000));
+		botao.setIcon(new ImageIcon(new ImageIcon(
+				"C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\erro.png")
+				.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));botao.setVisible(true);
 	}
 
 

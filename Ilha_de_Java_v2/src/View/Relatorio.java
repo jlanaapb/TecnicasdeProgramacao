@@ -8,13 +8,10 @@ import javax.swing.JFrame;
 
 import Model.Arquivo;
 
-
-
 public class Relatorio implements ActionListener{
 	private Janela janela;
 	public Relatorio(Janela janela) {
 		this.janela=janela;
-	
 	}
 	
 	public void actionPerformed(ActionEvent e) {

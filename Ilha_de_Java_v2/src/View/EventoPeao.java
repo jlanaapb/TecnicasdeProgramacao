@@ -4,14 +4,15 @@ import java.awt.event.ActionEvent;
 
 public class EventoPeao {
 	private Janela janela;
-	private Fischer fischer;
+	private Peao peao;
 	
 	public EventoPeao(Janela janela) {
 		this.janela=janela;
-		
+		this.peao=peao;
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		janela.setIconeAux(fischer.getIcon());		
+		janela.setIconeAux(peao.getIcon());	
+		peao.setClicado(true);
 	}
 }

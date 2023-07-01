@@ -18,8 +18,7 @@ public class EventoSelecionaBotao implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(rainha.isClicado()) 
 		{
-			
-			
+
 		}
 			
 	}

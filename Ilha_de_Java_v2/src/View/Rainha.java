@@ -7,9 +7,6 @@ import javax.swing.ImageIcon;
 public class Rainha extends Robo {
 	private ImageIcon iconeRainha;
 	private boolean clicado;
-	
-
-
 	public Rainha(int id) {
 	    super(id);
 	    iconeRainha = new ImageIcon("C:\\Users\\Usuário\\eclipse-workspace\\Ilha_de_Java_v2\\src\\View\\img\\xadrez-rainha-alt.png");
@@ -17,7 +14,6 @@ public class Rainha extends Robo {
 	    setIcon(iconeRainha);
 	}
 
-	
 	public ImageIcon getIcon()
 	{
 		return iconeRainha;
